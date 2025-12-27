@@ -1,0 +1,194 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* --- SETUP SCREEN --- */
+#setupScreen {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    width: 400px;
+    text-align: center;
+    margin: 20px;
+}
+
+.input-group { margin-bottom: 15px; text-align: left; }
+.flex-inputs { display: flex; gap: 10px; }
+input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+
+.setup-note {
+    background: #fff3cd;
+    color: #856404;
+    font-size: 0.85rem;
+    padding: 12px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: left;
+    border-left: 4px solid #ffeeba;
+    line-height: 1.4;
+}
+
+.btn-primary {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn-primary:hover { background-color: #0056b3; }
+.btn-stop:hover { background-color:#ea4335 }
+
+/* --- GAME SCREEN --- */
+#gameScreen {
+    display: none;
+    width: 900px;
+    max-width: 95%;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    overflow: hidden;
+    height: 650px;
+    margin: 20px;
+}
+
+.game-layout { display: flex; flex-direction: column; height: 100%; }
+
+.game-notes-panel {
+    background: #f8f9fa;
+    padding: 10px 20px;
+    font-size: 0.85rem;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    line-height: 1.5;
+}
+
+.progress-container {
+    width: 100%;
+    background-color: #e9ecef;
+    height: 8px;
+}
+
+#progressBar {
+    width: 0%;
+    height: 100%;
+    background-color: #28a745;
+    transition: width 0.4s ease;
+}
+
+.main-content { display: flex; flex-grow: 1; overflow: hidden; }
+
+.quiz-panel {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid #eee;
+}
+
+.bg-correct { background-color: #d4edda !important; transition: 0.3s; }
+.bg-wrong { background-color: #f8d7da !important; transition: 0.3s; }
+
+.equation { font-size: 4.5rem; font-weight: bold; margin-bottom: 15px; color: #333; }
+
+#answerInput {
+    font-size: 2.5rem;
+    padding: 10px;
+    width: 180px;
+    text-align: center;
+    border: 2px solid #007bff;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.log-panel {
+    flex: 1.5;
+    background-color: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+}
+
+.log-header {
+    padding: 12px;
+    background: #e9ecef;
+    font-weight: bold;
+    text-align: center;
+}
+
+.log-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    list-style: none;
+    margin: 0;
+}
+
+.log-item {
+    background: white;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    border-left: 5px solid #ccc;
+    font-size: 0.85rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.log-correct { border-left-color: #28a745; }
+.log-wrong { border-left-color: #dc3545; }
+.slow-warning { color: #d9534f; font-weight: bold; display: block; margin-top: 4px; }
+
+.btn-stop { margin-top: 15px; background-color: #6c757d; width: 60%; font-size: 0.9rem; }
+
+/* --- FOOTER --- */
+footer {
+    margin-top: auto;
+    width: 100%;
+    padding: 20px 0;
+    text-align: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 10px;
+}
+
+.icon-link svg {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s, fill 0.2s;
+}
+
+.icon-github { fill: #333; }
+.icon-linkedin { fill: #0077b5; }
+.icon-email { fill: #ea4335; }
+
+.icon-link:hover svg { transform: scale(1.2); }
+
+/* Modal */
+#reportOverlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center; align-items: center;
+    z-index: 100;
+}
+.report-box { background: white; padding: 30px; border-radius: 12px; width: 400px; text-align: center; }
+.study-list { text-align: left; background: #f8f9fa; padding: 15px; border-radius: 8px; margin: 15px 0; }
